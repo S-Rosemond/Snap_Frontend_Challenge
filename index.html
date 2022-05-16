@@ -15,20 +15,48 @@
   </head>
   <body>
     <nav
-      class="ds-flex align-center justify-between nav-mobile-container font-sz-2rem desktop-container"
+      class="ds-flex align-center justify-between nav-mobile-container font-sz-2rem nav"
     >
-      <p class="font-w-700 nav-s1">Snap</p>
+      <p class="font-w-700 nav-s1">snap</p>
 
       <ul class="hide-mobile-flex nav-s2">
-        <li>Features <span></span></li>
-        <li>Company <span></span></li>
-        <li>Careers <span></span></li>
-        <li>About <span></span></li>
+        <li class="font-sz-1rem clr-medium-gray">
+          <a class="ds-flex gap-10px" href="#"
+            >Features
+            <span>
+              <svg class="svg-mb-1xp" width="10" height="6">
+                <use class="icon-01" xlink:href="#arrow-down" href="#arrow-down" />
+
+                 <use class="icon-02" fill="white" xlink:href="#arrow-up" href="#arrow-up" />
+              </svg width="10" height="6"> 
+              </span
+          ></a>
+        </li>
+        <li class="font-sz-1rem clr-medium-gray">
+          <a class="ds-flex gap-10px" href="#">Company
+            <span>
+              <svg class="svg-mb-1xp" width="10" height="6">
+                <use class="icon-01" xlink:href="#arrow-down" href="#arrow-down" />
+  
+                 <use class="icon-02" fill="white" xlink:href="#arrow-up" href="#arrow-up" />
+              </svg width="10" height="6"> 
+              </span
+          >
+          </a>  
+        </li>
+        <li class="font-sz-1rem clr-medium-gray">
+          <a href="#">Careers</a>
+        </li>
+        <li class="font-sz-1rem clr-medium-gray">
+          <a href="#">About</a>
+        </li>
       </ul>
 
-      <ul class="hide-mobile-flex nav-s3">
-        <li>Login</li>
-        <li><a href="#">Register</a></li>
+      <ul class="hide-mobile-flex gap-25px nav-s3">
+        <li class="font-sz-1rem clr-medium-gray"><a href="#">Login</a></li>
+        <li class="font-sz-1rem clr-medium-gray">
+          <a class="btn-reg" href="#">Register</a>
+        </li>
       </ul>
 
       <span class="hide-desktop icon-center-mobile">
@@ -46,10 +74,10 @@
             Get your team in sync, no matter your location. Streamline
             processes, create team rituals, and watch productivity soar.
           </p>
-          <a class="btn-a margin-0-auto" href="#">Learn more</a>
+          <a class="btn btn-a margin-0-auto" href="#">Learn more</a>
 
-          <aside>
-            <ul class="ds-flex padding-left-none align-center footer-icon-list">
+          <aside class="icon-aside">
+            <ul class="ds-flex padding-left-none align-center icon-list">
               <li>
                 <svg class="icon-scale-mobile" width="114" height="20">
                   <use xlink:href="#databiz" href="#databiz" />
@@ -126,6 +154,15 @@
             fill="#ADADAD"
           />
         </g>
+        <g id="arrow-down" xmlns="http://www.w3.org/2000/svg">
+          <path
+            stroke="#686868"
+            stroke-width="1.5"
+            fill="none"
+            d="m1 1 4 4 4-4"
+          />
+        </g>
+        <g id="arrow-up"  xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 5 4-4 4 4"/></g>
       </svg>
     </div>
   </body>
