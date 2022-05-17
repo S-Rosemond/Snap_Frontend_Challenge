@@ -348,6 +348,7 @@ body {
 
 .svg-mb-1xp {
   margin-bottom: 2px;
+  pointer-events: none;
 }
 
 #use-databiz-logo {
@@ -372,6 +373,34 @@ body {
 
 .icon-02 {
   opacity: 0;
+}
+
+/* //// Drop down //// */
+
+.drop-down {
+  position: absolute;
+  display: inline-block;
+  border-radius: 7px;
+  margin-top: 1.1rem;
+  right: 0.05rem;
+  box-shadow: -5px 2px 25px -6px rgba(0, 0, 0, 0.53);
+  -webkit-box-shadow: -5px 2px 25px -6px rgba(0, 0, 0, 0.53);
+  -moz-box-shadow: -5px 2px 25px -6px rgba(0, 0, 0, 0.53);
+}
+
+.drop-down-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1rem;
+  width: 15ch;
+}
+
+.drop-down-sm {
+}
+
+.drop-down-sm-inner {
+  width: 12ch;
 }
 
 /* //// Media Query //// */
@@ -422,9 +451,12 @@ body {
   }
 
   .main-article-1 {
-    width: 123ch;
+    width: 125ch;
     text-align: left;
-    margin: auto 0 0 0;
+    margin: 0;
+    justify-content: end;
+    justify-content: flex-end;
+    gap: 2rem;
   }
 
   .desktop-main-container {
@@ -454,5 +486,16 @@ body {
 
   .nav {
     height: 6rem;
+  }
+}
+
+@keyframes drop-down-menu {
+  from {
+    clip-path: var(--animate-close);
+    /* clip-path: circle(0% at 100% 100%); */
+  }
+  to {
+    clip-path: var(--animate-open);
+    /* clip-path: circle(100% at 50% 50%); */
   }
 }
