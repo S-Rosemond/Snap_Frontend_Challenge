@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>snap</title>
   </head>
   <body>
@@ -20,7 +21,7 @@
       <p class="font-w-700 nav-s1">snap</p>
 
       <ul class="hide-mobile-flex nav-s2">
-        <li class="font-sz-1rem clr-medium-gray pos-relative">
+        <li x-data="{open:false, toggle(){this.open = !this.open}}" x-on:click="toggle()" class="font-sz-1rem clr-medium-gray pos-relative">
           <a class="ds-flex gap-10px" href="#"
             >Features
             <span>  
@@ -32,7 +33,7 @@
               </svg width="10" height="6"> 
               </span
           ></a>
-          <div class=" drop-down">
+          <div x-show="open" class="drop-down">
              <ul class="padding-left-none drop-down-inner">
                <li>
                 <a class="ds-flex gap-10px" href="#">
@@ -63,7 +64,7 @@ Reminders
              </ul>
           </div>
         </li>
-        <li class="font-sz-1rem clr-medium-gray pos-relative">
+        <li x-data="{open:false, toggle(){this.open = !this.open}}" x-on:click="toggle()"  class="font-sz-1rem clr-medium-gray pos-relative">
           <a class="ds-flex gap-10px" href="#">Company
             <span>
               <svg class="svg-mb-1xp" width="10" height="6">
@@ -75,7 +76,7 @@ Reminders
           >
           </a> 
           
-          <div class=" drop-down drop-down-sm">
+          <div x-show="open" class=" drop-down drop-down-sm">
             <ul class="padding-left-none drop-down-inner drop-down-sm-inner">
               <li>History</li>
               <li>Our Team</li>
