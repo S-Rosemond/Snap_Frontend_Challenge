@@ -14,14 +14,16 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>snap</title>
   </head>
-  <body>
+  <body x-data="{sidebar:false}">
     <nav
       class="ds-flex align-center justify-between nav-mobile-container font-sz-2rem nav"
     >
       <p class="font-w-700 nav-s1">snap</p>
 
       <ul class="hide-mobile-flex nav-s2">
-        <li x-data="{open:false, toggle(){this.open = !this.open}}" x-on:click="toggle()" class="font-sz-1rem clr-medium-gray pos-relative">
+        <li x-data="{open:false, toggle(){this.open = !this.open}, close() {
+          this.open = false
+        }}" x-on:click="toggle()" class="font-sz-1rem clr-medium-gray pos-relative" aria-label="expand drop-down">
           <a class="ds-flex gap-10px" href="#"
             >Features
             <span>  
@@ -33,7 +35,7 @@
               </svg width="10" height="6"> 
               </span
           ></a>
-          <div x-show="open" class="drop-down">
+          <div x-show="open" x-on:click.outside="close()" class="drop-down">
              <ul class="padding-left-none drop-down-inner">
                <li>
                 <a class="ds-flex gap-10px" href="#">
@@ -64,7 +66,9 @@ Reminders
              </ul>
           </div>
         </li>
-        <li x-data="{open:false, toggle(){this.open = !this.open}}" x-on:click="toggle()"  class="font-sz-1rem clr-medium-gray pos-relative">
+        <li x-data="{open:false, toggle(){this.open = !this.open}, close() {
+          this.open = false
+        }}" x-on:click="toggle()"  class="font-sz-1rem clr-medium-gray pos-relative">
           <a class="ds-flex gap-10px" href="#">Company
             <span>
               <svg class="svg-mb-1xp" width="10" height="6">
@@ -76,7 +80,7 @@ Reminders
           >
           </a> 
           
-          <div x-show="open" class=" drop-down drop-down-sm">
+          <div x-show="open" x-on:click.outside="close()" class=" drop-down drop-down-sm">
             <ul class="padding-left-none drop-down-inner drop-down-sm-inner">
               <li>History</li>
               <li>Our Team</li>
@@ -95,17 +99,35 @@ Reminders
       </ul>
 
       <ul class="hide-mobile-flex gap-25px nav-s3">
-        <li class="font-sz-1rem clr-medium-gray"><a href="#">Login</a></li>
+        <li class="font-sz-1rem clr-medium-gray">
+          <a href="#">Login</a>
+        </li>
         <li class="font-sz-1rem clr-medium-gray">
           <a class="btn-reg" href="#">Register</a>
         </li>
       </ul>
 
-      <span class="hide-desktop icon-center-mobile">
-        <svg width="32" height="18">
+      <div   @click="sidebar = true" 
+      class="hide-desktop icon-center-mobile"
+      
+      >
+        <svg width="32" height="18" class="cursor-pointer">
           <use xlink:href="#icon-menu" href="#icon-menu" />
         </svg>
-      </span>
+
+        
+
+      </div>
+      <div x-show="sidebar" x-cloak="true"
+         class="sidebar":class="{'x-translate-full': sidebar === true, 'x-translate-outside': sidebar === false}" x-ref="mobileMenu">
+            
+            <div class="ds-flex justify-end sidebar-header">
+              <svg class="cursor-pointer" @click="sidebar = false" width="26" height="26">
+                  <use xlink:href="#icon-menu-close" href="#icon-menu-close" />
+              </svg>
+            </div>
+
+        </div>
     </nav>
 
     <main class="ds-flex text-center main desktop-main-container">
@@ -121,22 +143,22 @@ Reminders
           <aside class="icon-aside">
             <ul class="ds-flex padding-left-none align-center icon-list">
               <li>
-                <svg class="icon-scale-mobile" width="114" height="20">
+                <svg class="icon-scale-mobile cursor-pointer" width="114" height="20">
                   <use xlink:href="#databiz" href="#databiz" />
                 </svg>
               </li>
               <li>
-                <svg class="icon-scale-mobile" width="73" height="36">
+                <svg class="icon-scale-mobile cursor-pointer" width="73" height="36">
                   <use xlink:href="#audiophile" href="#audiophile" />
                 </svg>
               </li>
               <li>
-                <svg class="icon-scale-mobile" width="90" height="20">
+                <svg class="icon-scale-mobile cursor-pointer" width="90" height="20">
                   <use xlink:href="#client-meet" href="#client-meet" />
                 </svg>
               </li>
               <li>
-                <svg class="icon-scale-mobile" width="83" height="24">
+                <svg class="icon-scale-mobile cursor-pointer" width="83" height="24">
                   <use xlink:href="#client-marker" href="#client-marker" />
                 </svg>
               </li>
