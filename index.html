@@ -114,21 +114,20 @@ Reminders
         <svg width="32" height="18" class="cursor-pointer">
           <use xlink:href="#icon-menu" href="#icon-menu" />
         </svg>
-
-        
-
       </div>
-      <div x-show="sidebar" x-cloak="true"
-         class="sidebar":class="{'x-translate-full': sidebar === true, 'x-translate-outside': sidebar === false}" x-ref="mobileMenu">
-            
-            <div class="ds-flex justify-end sidebar-header">
-              <svg class="cursor-pointer" @click="sidebar = false" width="26" height="26">
-                  <use xlink:href="#icon-menu-close" href="#icon-menu-close" />
-              </svg>
-            </div>
-
-        </div>
     </nav>
+    
+    <aside>
+      <div x-show="sidebar" x-cloak="true"
+      class="sidebar":class="{'x-translate-full': sidebar === true, 'x-translate-outside': sidebar === false}" x-ref="mobileMenu">
+         
+         <div class="ds-flex justify-end sidebar-header">
+           <svg class="cursor-pointer" @click="sidebar = false" width="26" height="26">
+               <use xlink:href="#icon-menu-close" href="#icon-menu-close" />
+           </svg>
+         </div>
+     </div>
+    </aside>
 
     <main class="ds-flex text-center main desktop-main-container">
       <section class="ds-flex flex-column-reverse gap-50px main-s1">
@@ -140,7 +139,7 @@ Reminders
           </p>
           <a class="btn btn-a margin-0-auto" href="#">Learn more</a>
 
-          <aside class="icon-aside">
+          <section class="icon-aside">
             <ul class="ds-flex padding-left-none align-center icon-list">
               <li>
                 <svg class="icon-scale-mobile cursor-pointer" width="114" height="20">
@@ -163,10 +162,10 @@ Reminders
                 </svg>
               </li>
             </ul>
-          </aside>
+          </section>
         </article>
 
-        <aside>
+        <section>
           <picture>
             <source
               media="(max-width:768px)"
@@ -178,7 +177,7 @@ Reminders
             />
             <img src="/img/image-hero-mobile.png" alt="hero" />
           </picture>
-        </aside>
+        </section>
       </section>
     </main>
 
