@@ -72,7 +72,8 @@ body {
 
 /* !important To do change icon fill to black */
 
-:where(li.clr-medium-gray):hover {
+:where(li.clr-medium-gray):hover,
+:where(.btn-reg):hover {
   color: var(--off-black);
 }
 
@@ -405,39 +406,51 @@ body {
 
 /* //// Side bar //// */
 .sidebar {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   position: fixed;
   top: 0;
   right: 0;
   width: 60%;
   height: 100%;
   background-color: white;
-  z-index: 2;
+  z-index: 999;
   transition: all 0.5s ease-in-out;
   opacity: 1;
 }
 
 .backdrop {
-  display: inline-block;
+  display: flex;
   position: fixed;
   top: 0;
   right: 0;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   background-color: var(--off-black);
   opacity: 0.7;
-  z-index: -100;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
   transition: all 0.5s ease-in-out;
 }
 
 .sidebar-header {
-  padding: 7px;
+  padding: 0.78rem 1rem;
+  margin-bottom: 1rem;
 }
 
 .sidebar-groups {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+}
+
+.sidebar-container {
+  padding: 1rem 3rem;
+}
+
+.sidebar-pd-1rem {
+  padding: 0 1rem;
 }
 
 .x-translate-outside {
