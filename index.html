@@ -28,36 +28,36 @@
             >Features
             <span>  
               <!-- aria-label="dropdown menu" -->
-              <svg class="svg-mb-1xp" width="10" height="6" focusable="false">
-                <use class="icon-01" xlink:href="#arrow-down" href="#arrow-down" />
+              <svg class="svg-mb-1xp icon-stroke" width="10" height="6" focusable="false">
+                <use x-show="!open" xlink:href="#arrow-down" href="#arrow-down" />
 
-                 <use class="icon-02" fill="white" xlink:href="#arrow-up" href="#arrow-up" />
+                 <use x-show="open" :class="{'icon-show': open === false, 'icon-hidden': sidebar === true}" fill="white" xlink:href="#arrow-up" href="#arrow-up" />
               </svg width="10" height="6"> 
               </span
           ></a>
           <div x-show="open" x-on:click.outside="close()" class="drop-down">
              <ul class="padding-left-none drop-down-inner">
                <li>
-                <a class="ds-flex gap-10px hover-black" href="#">
+                <a class="dropdown-options hover-black" href="#">
                   <svg focusable="false" width="14" height="16">
                     <use xlink:href="#todo-icon" href="#todo-icon" />
                   </svg>
                   Todo List
                 </a> 
                 </li>
-               <li> <a class="ds-flex gap-10px hover-black" href="#">
+               <li> <a class="dropdown-options hover-black" href="#">
                 <svg focusable="false" width="16" height="16">
                   <use xlink:href="#icon-calendar" href="#icon-calendar" />
                 </svg>
                  Calendar
                </a> </li>
-               <li> <a class="ds-flex gap-10px hover-black" href="#">
+               <li> <a class="dropdown-options hover-black" href="#">
                 <svg focusable="false" width="13" height="17">
                   <use xlink:href="#icon-reminders" href="#icon-reminders" />
                 </svg>
 Reminders
                </a> </li>
-               <li> <a class="ds-flex gap-10px hover-black" href="#">
+               <li> <a class="dropdown-options hover-black" href="#">
                 <svg focusable="false" width="16" height="16">
                   <use xlink:href="#icon-planning" href="#icon-planning" />
                 </svg>
@@ -71,10 +71,10 @@ Reminders
         }}" x-on:click="toggle()"  class="font-sz-1rem clr-medium-gray pos-relative">
           <a class="ds-flex gap-10px" href="#">Company
             <span>
-              <svg class="svg-mb-1xp" width="10" height="6">
-                <use class="icon-01" xlink:href="#arrow-down" href="#arrow-down" />
+              <svg class="svg-mb-1xp icon-stroke" width="10" height="6">
+                <use x-show="!open" xlink:href="#arrow-down" href="#arrow-down" />
   
-                 <use class="icon-02" fill="white" xlink:href="#arrow-up" href="#arrow-up" />
+                 <use x-show="open" :class="{'icon-show': open === false, 'icon-hidden': sidebar === true}" fill="white" xlink:href="#arrow-up" href="#arrow-up" />
               </svg width="10" height="6"> 
               </span
           >
@@ -127,7 +127,7 @@ Reminders
            </svg>
          </section>
         <div class="sidebar-groups sidebar-container clr-medium-gray">
-  <section x-data="{expand:false, toggleExpand(){
+         <section x-data="{expand:false, toggleExpand(){
           this.expand = !this.expand
          } }" class="font-sz-1rem ds-flex-column gap-20px">
 
@@ -135,40 +135,42 @@ Reminders
 
               <div class="ds-flex gap-10px align-center" >
                   <span class="hover-black">Features</span>   
-              <svg class="svg-mb-1xp hover-black" width="10" height="6" focusable="false">
-                  <use class="icon-01" xlink:href="#arrow-down" href="#arrow-down" />
+              <svg class="svg-mb-1xp icon-stroke" width="10" height="6" focusable="false">
+                  <use x-show="!expand" xlink:href="#arrow-down" href="#arrow-down" />
 
-                  <use class="icon-02" fill="white" xlink:href="#arrow-up" href="#arrow-up" />
+                  <use x-show="expand" :class="{'icon-show': expand === true, 'icon-hidden': expand === false}"  xlink:href="#arrow-up" href="#arrow-up" />
               </svg width="10" height="6"> 
               </div>
               
 
-              <ul x-show="expand" class="sidebar-groups">
-                  <li>  
+              <ul x-show="expand" class="sidebar-groups sb-dropdown">
+                  <li class="dropdown-options">  
                     <svg focusable="false" width="14" height="16">
                       <use xlink:href="#todo-icon" href="#todo-icon" />
                     </svg> 
                     <span class="hover-black">Todo List</span> 
                   </li>
-                  <li>
+                  <li class="dropdown-options">
                     <svg focusable="false" width="16" height="16">
                       <use xlink:href="#icon-calendar" href="#icon-calendar" />
                     </svg> 
                     <span class="hover-black">Calendar</span> 
                   </li>
-                  <li>
 
-             <svg focusable="false" width="13" height="17">
-               <use xlink:href="#icon-reminders" href="#icon-reminders" />
+                 <li class="dropdown-options">
+
+               <svg focusable="false" width="13" height="17">
+                <use xlink:href="#icon-reminders" href="#icon-reminders" />
              </svg>
              <span class="hover-black">Reminders</span> 
-                  </li>
-                  <li> 
-             <svg focusable="false" width="16" height="16">
-               <use xlink:href="#icon-planning" href="#icon-planning" />
-             </svg>
-             <span class="hover-black">Planning</span>  
-                  </li>
+                 </li>
+
+                 <li class="dropdown-options"> 
+                  <svg focusable="false" width="16" height="16">
+                    <use xlink:href="#icon-planning" href="#icon-planning" />
+                  </svg>
+                  <span class="hover-black">Planning</span>  
+                </li>
                </ul>
               </div> 
          </section>
@@ -181,15 +183,15 @@ Reminders
 
               <div class="ds-flex gap-10px align-center" >
                  <span class="hover-black">Company</span>  
-              <svg class="svg-mb-1xp" width="10" height="6" focusable="false">
-                  <use class="icon-01" xlink:href="#arrow-down" href="#arrow-down" />
+              <svg class="svg-mb-1xp icon-stroke" width="10" height="6" focusable="false">
+                  <use x-show="!expand" xlink:href="#arrow-down" href="#arrow-down" />
 
-                  <use class="icon-02" fill="white" xlink:href="#arrow-up" href="#arrow-up" />
+                  <use  :class="{'icon-show': expand === true, 'icon-hidden': expand === false}" xlink:href="#arrow-up" href="#arrow-up" />
               </svg width="10" height="6"> 
               </div>
                
 
-              <ul x-show="expand" class="sidebar-groups">
+              <ul x-show="expand" class="sidebar-groups sb-dropdown">
                   <li>  
                     <span class="hover-black">History</span> 
                   </li>
@@ -202,9 +204,14 @@ Reminders
                </ul>
               </div> 
          </section>
+
+         <a class="font-sz-1rem clr-medium-gray" href="#">Careers</a>
+         <a class="font-sz-1rem clr-medium-gray" href="#">About</a>
+
         </div>
          
         <div class="ds-flex-column text-center gap-20px sidebar-pd-1rem">
+
               <a class="font-sz-1rem clr-medium-gray" href="#">Login</a>
            
               <a class="font-sz-1rem clr-medium-gray btn-reg" href="#">Register</a>
@@ -304,13 +311,13 @@ Reminders
         </g>
         <g id="arrow-down" xmlns="http://www.w3.org/2000/svg">
           <path
-            stroke="#686868"
+            
             stroke-width="1.5"
             fill="none"
             d="m1 1 4 4 4-4"
           />
         </g>
-        <g id="arrow-up"  xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 5 4-4 4 4"/></g>
+        <g id="arrow-up"  xmlns="http://www.w3.org/2000/svg"><path  stroke-width="1.5" fill="none" d="m1 5 4-4 4 4"/></g>
         
         <g id="todo-icon"  xmlns="http://www.w3.org/2000/svg"><path d="M14 3v12a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h1V1a1 1 0 1 1 2 0v1h2V1a1 1 0 1 1 2 0v1h2V1a1 1 0 0 1 2 0v1h1a1 1 0 0 1 1 1Zm-2 3H2v1h10V6Zm0 3H2v1h10V9Zm0 3H2v1h10v-1Z" fill="#726CEE"/></g>
 
