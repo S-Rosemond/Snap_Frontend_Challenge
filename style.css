@@ -72,9 +72,14 @@ body {
 
 /* !important To do change icon fill to black */
 
-:where(li.clr-medium-gray):hover,
-:where(.btn-reg):hover {
+:where(li.clr-medium-gray > a):hover,
+a.clr-medium-gray:hover,
+.hover-black:hover {
   color: var(--off-black);
+}
+
+.hover-black:hover {
+  fill: var(--off-black);
 }
 
 .btn-reg:hover {

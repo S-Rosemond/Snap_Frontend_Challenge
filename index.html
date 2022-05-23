@@ -38,26 +38,26 @@
           <div x-show="open" x-on:click.outside="close()" class="drop-down">
              <ul class="padding-left-none drop-down-inner">
                <li>
-                <a class="ds-flex gap-10px" href="#">
+                <a class="ds-flex gap-10px hover-black" href="#">
                   <svg focusable="false" width="14" height="16">
                     <use xlink:href="#todo-icon" href="#todo-icon" />
                   </svg>
                   Todo List
                 </a> 
                 </li>
-               <li> <a class="ds-flex gap-10px" href="#">
+               <li> <a class="ds-flex gap-10px hover-black" href="#">
                 <svg focusable="false" width="16" height="16">
                   <use xlink:href="#icon-calendar" href="#icon-calendar" />
                 </svg>
                  Calendar
                </a> </li>
-               <li> <a class="ds-flex gap-10px" href="#">
+               <li> <a class="ds-flex gap-10px hover-black" href="#">
                 <svg focusable="false" width="13" height="17">
                   <use xlink:href="#icon-reminders" href="#icon-reminders" />
                 </svg>
 Reminders
                </a> </li>
-               <li> <a class="ds-flex gap-10px" href="#">
+               <li> <a class="ds-flex gap-10px hover-black" href="#">
                 <svg focusable="false" width="16" height="16">
                   <use xlink:href="#icon-planning" href="#icon-planning" />
                 </svg>
@@ -82,9 +82,9 @@ Reminders
           
           <div x-show="open" x-on:click.outside="close()" class=" drop-down drop-down-sm">
             <ul class="padding-left-none drop-down-inner drop-down-sm-inner">
-              <li>History</li>
-              <li>Our Team</li>
-              <li>Blog</li>
+              <li class="hover-black">History</li>
+              <li class="hover-black">Our Team</li>
+              <li class="hover-black">Blog</li>
             </ul>
          </div>
 
@@ -121,7 +121,7 @@ Reminders
     <aside  x-show="sidebar" x-cloak="true"
       class="sidebar gap-base" :class="{'x-translate-full': sidebar === true, 'x-translate-outside': sidebar === false}" x-ref="mobileMenu">
          
-         <section class="ds-flex justify-end sidebar-header clr-medium-gray">
+         <section class="ds-flex justify-end sidebar-header">
            <svg class="cursor-pointer" @click="sidebar = false" width="26" height="26">
                <use xlink:href="#icon-menu-close" href="#icon-menu-close" />
            </svg>
@@ -131,39 +131,43 @@ Reminders
           this.expand = !this.expand
          } }" class="font-sz-1rem ds-flex-column gap-20px">
 
-            <div x-on:click="toggleExpand()" >
-                  Features 
-              <svg class="svg-mb-1xp" width="10" height="6" focusable="false">
+            <div  x-on:click="toggleExpand()" >
+
+              <div class="ds-flex gap-10px align-center" >
+                  <span class="hover-black">Features</span>   
+              <svg class="svg-mb-1xp hover-black" width="10" height="6" focusable="false">
                   <use class="icon-01" xlink:href="#arrow-down" href="#arrow-down" />
 
                   <use class="icon-02" fill="white" xlink:href="#arrow-up" href="#arrow-up" />
               </svg width="10" height="6"> 
+              </div>
+              
 
               <ul x-show="expand" class="sidebar-groups">
                   <li>  
                     <svg focusable="false" width="14" height="16">
                       <use xlink:href="#todo-icon" href="#todo-icon" />
                     </svg> 
-                    <span>Todo List</span> 
+                    <span class="hover-black">Todo List</span> 
                   </li>
                   <li>
                     <svg focusable="false" width="16" height="16">
                       <use xlink:href="#icon-calendar" href="#icon-calendar" />
                     </svg> 
-                    <span>Calendar</span> 
+                    <span class="hover-black">Calendar</span> 
                   </li>
                   <li>
 
              <svg focusable="false" width="13" height="17">
                <use xlink:href="#icon-reminders" href="#icon-reminders" />
              </svg>
-             <span>Reminders</span> 
+             <span class="hover-black">Reminders</span> 
                   </li>
                   <li> 
              <svg focusable="false" width="16" height="16">
                <use xlink:href="#icon-planning" href="#icon-planning" />
              </svg>
-             <span>Planning</span>  
+             <span class="hover-black">Planning</span>  
                   </li>
                </ul>
               </div> 
@@ -174,22 +178,26 @@ Reminders
          } }" class="font-sz-1rem ds-flex-column gap-20px">
 
             <div x-on:click="toggleExpand()" >
-                  Company
+
+              <div class="ds-flex gap-10px align-center" >
+                 <span class="hover-black">Company</span>  
               <svg class="svg-mb-1xp" width="10" height="6" focusable="false">
                   <use class="icon-01" xlink:href="#arrow-down" href="#arrow-down" />
 
                   <use class="icon-02" fill="white" xlink:href="#arrow-up" href="#arrow-up" />
               </svg width="10" height="6"> 
+              </div>
+               
 
               <ul x-show="expand" class="sidebar-groups">
                   <li>  
-                    <span>History</span> 
+                    <span class="hover-black">History</span> 
                   </li>
                   <li>
-                    <span>Our Team</span> 
+                    <span class="hover-black">Our Team</span> 
                   </li>
                   <li>
-                     <span>Blog</span>
+                     <span class="hover-black">Blog</span>
                   </li>  
                </ul>
               </div> 
