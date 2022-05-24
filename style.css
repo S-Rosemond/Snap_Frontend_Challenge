@@ -505,10 +505,6 @@ a.clr-medium-gray:hover,
   stroke: var(--off-black);
 }
 
-/* #arrow-down:hover {
-  stroke: black;
-} */
-
 /* //// Media Query //// */
 
 @media (min-width: 375px) {
@@ -527,6 +523,10 @@ a.clr-medium-gray:hover,
   }
   .icon-aside {
     margin-top: 1rem;
+  }
+
+  #use-brand {
+    flex: 1;
   }
 }
 
@@ -592,6 +592,14 @@ a.clr-medium-gray:hover,
 
   .nav {
     height: 6rem;
+  }
+
+  #use-brand {
+    flex: 0.2;
+  }
+
+  .nav-mobile-container {
+    margin: 0 0 0 2rem;
   }
 }
 
