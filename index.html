@@ -31,33 +31,33 @@
               <svg class="svg-mb-1xp icon-stroke" width="10" height="6" focusable="false">
                 <use x-show="!open" xlink:href="#arrow-down" href="#arrow-down" />
 
-                 <use x-show="open" :class="{'icon-show': open === false, 'icon-hidden': sidebar === true}" fill="white" xlink:href="#arrow-up" href="#arrow-up" />
-              </svg width="10" height="6"> 
+                 <use x-show="open" :class="{'icon-show': open === false, 'icon-hidden': sidebar === true}" xlink:href="#arrow-up" href="#arrow-up" />
+              </svg> 
               </span
           ></a>
           <div x-show="open" x-on:click.outside="close()" class="drop-down">
              <ul class="padding-left-none drop-down-inner">
                <li>
-                <a class="dropdown-options hover-black" href="#">
+                <a class="dropdown-options-nav hover-black" href="#">
                   <svg focusable="false" width="14" height="16">
                     <use xlink:href="#todo-icon" href="#todo-icon" />
                   </svg>
                   Todo List
                 </a> 
                 </li>
-               <li> <a class="dropdown-options hover-black" href="#">
+               <li> <a class="dropdown-options-nav hover-black" href="#">
                 <svg focusable="false" width="16" height="16">
                   <use xlink:href="#icon-calendar" href="#icon-calendar" />
                 </svg>
                  Calendar
                </a> </li>
-               <li> <a class="dropdown-options hover-black" href="#">
+               <li> <a class="dropdown-options-nav hover-black" href="#">
                 <svg focusable="false" width="13" height="17">
                   <use xlink:href="#icon-reminders" href="#icon-reminders" />
                 </svg>
 Reminders
                </a> </li>
-               <li> <a class="dropdown-options hover-black" href="#">
+               <li> <a class="dropdown-options-nav hover-black" href="#">
                 <svg focusable="false" width="16" height="16">
                   <use xlink:href="#icon-planning" href="#icon-planning" />
                 </svg>
@@ -143,7 +143,7 @@ Reminders
               </div>
               
 
-              <ul x-show="expand" class="sidebar-groups sb-dropdown">
+              <ul x-show="expand" class="sidebar-groups sb-dropdown sb-extra-width">
                   <li class="dropdown-options">  
                     <svg focusable="false" width="14" height="16">
                       <use xlink:href="#todo-icon" href="#todo-icon" />
@@ -312,8 +312,6 @@ Reminders
         <g id="arrow-down" xmlns="http://www.w3.org/2000/svg">
           <path
             
-            stroke-width="1.5"
-            fill="none"
             d="m1 1 4 4 4-4"
           />
         </g>

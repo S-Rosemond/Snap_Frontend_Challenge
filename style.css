@@ -80,10 +80,6 @@ a.clr-medium-gray:hover,
   color: var(--off-black);
 }
 
-svg.icon-stroke:hover {
-  stroke: yellow;
-}
-
 .hover-black:hover {
   fill: var(--off-black);
 }
@@ -352,7 +348,6 @@ svg.icon-stroke:hover {
 
 .svg-mb-1xp {
   margin-bottom: 2px;
-  pointer-events: none;
 }
 
 #use-databiz-logo {
@@ -383,10 +378,6 @@ svg.icon-stroke:hover {
   opacity: 1;
 }
 
-.icon-stroke {
-  stroke: var(--stroke-gray);
-}
-
 /* //// Drop down //// */
 
 .drop-down {
@@ -404,19 +395,29 @@ svg.icon-stroke:hover {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  padding: 1rem;
+  padding: 0.75rem;
   width: 15ch;
 }
 
 .drop-down-sm {
+  padding: 1rem;
 }
 
 .drop-down-sm-inner {
   width: 12ch;
 }
 
-.dropdown-options {
+.dropdown-options,
+.dropdown-options-nav {
   display: flex;
+}
+
+.dropdown-options-nav {
+  gap: 0.9rem;
+  justify-content: space-evenly;
+}
+
+.dropdown-options {
   gap: 0.625rem;
 }
 
@@ -455,6 +456,10 @@ svg.icon-stroke:hover {
   margin-bottom: 1rem;
 }
 
+.sb-extra-width {
+  width: 120%;
+}
+
 .sidebar-groups {
   display: flex;
   flex-direction: column;
@@ -484,6 +489,25 @@ svg.icon-stroke:hover {
 [x-cloak] {
   display: none !important;
 }
+
+#arrow-down {
+  stroke-width: 1.5;
+  fill: none;
+  /* stroke: var(--stroke-gray); */
+}
+
+.icon-stroke {
+  stroke: var(--stroke-gray);
+}
+
+:where(li.clr-medium-gray > a):hover > * > .icon-stroke,
+.hover-black:hover + .icon-stroke {
+  stroke: var(--off-black);
+}
+
+/* #arrow-down:hover {
+  stroke: black;
+} */
 
 /* //// Media Query //// */
 
