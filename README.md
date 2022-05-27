@@ -31,7 +31,7 @@ Users should be able to:
 
 #### Desktop
 
-![desktop image](./screenshot.png)
+![desktop image](./Screenshot.png)
 
 #### Mobile
 
