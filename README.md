@@ -4,14 +4,18 @@ This is a solution to the [Intro section with dropdown navigation challenge on F
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-- [Acknowledgments](#acknowledgments)
+- [Frontend Mentor - Intro section with dropdown navigation solution](#frontend-mentor---intro-section-with-dropdown-navigation-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+      - [Desktop](#desktop)
+      - [Mobile](#mobile)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+  - [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -25,17 +29,19 @@ Users should be able to:
 
 ### Screenshot
 
+#### Desktop
+
 ![desktop image](./screenshot.png)
+
+#### Mobile
+
 ![mobile image](./Screenshot%202022-05-16%20at%2021-01-17%20snap%20mobile.png)
 
 Desktop and mobile solution screenshots.
 
 ### Links
 
-<!-- Saved for later -->
-
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution and live URL : [Github pages](https://s-rosemond.github.io/Snap_Frontend_Challenge/)
 
 ## My process
 
@@ -45,7 +51,6 @@ Desktop and mobile solution screenshots.
 - CSS custom properties
 - Flexbox only -- flexbox refresher
 - Mobile-first workflow
-- saved for later
 
 ### What I learned
 
